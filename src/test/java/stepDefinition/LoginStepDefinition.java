@@ -1,4 +1,4 @@
-package stepDefinetion;
+package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -8,11 +8,10 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class LoginStepDefination {
+public class LoginStepDefinition {
     WebDriver driver;
 
     @After
@@ -32,8 +31,10 @@ public class LoginStepDefination {
     }
 
 
-    @When("user enter valid username and password")
-    public void enterUsernameAndPassword() {
+    @When("user enter \"(.*)\" and \"(.*)\"$")
+    public void enterUsernameAndPassword(String username ,String password) {
+
+        System.out.println(username+" "+password);
 
     }
 

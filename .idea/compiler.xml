@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="E-commerce_App_utomation" />
+        <module name="E-commerce_App_Automation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="E-commerce_App_utomation" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
