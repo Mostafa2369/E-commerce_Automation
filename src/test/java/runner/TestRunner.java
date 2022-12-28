@@ -10,8 +10,6 @@ import io.cucumber.core.runtime.ObjectFactoryServiceLoader;
 @CucumberOptions(
         features = "src\\test\\java\\features",
         glue = "stepDefinition"
-
-
 )
 public class TestRunner {
 
