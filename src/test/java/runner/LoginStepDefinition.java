@@ -1,4 +1,4 @@
-package stepDefinition;
+package runner;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.page_object.Login;
@@ -17,11 +16,6 @@ import java.util.concurrent.TimeUnit;
 public class LoginStepDefinition {
     WebDriver driver;
     Login mLogin;
-    @After
-    public void closePage() {
-    driver.quit();
-    }
-
     @Given("user navigate to login page")
     public void goToLoginPage() {
 
@@ -29,31 +23,38 @@ public class LoginStepDefinition {
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
+        mLogin = new Login(driver);
+        mLogin.getLogIN().click();
     }
-
-
     @When("user enter \"(.*)\" and \"(.*)\"$")
-    public void enterUsernameAndPassword(String username ,String password) {
-       mLogin = new Login(driver);
-       mLogin.getLogIN().click();
-       mLogin.Email().sendKeys(username);
-       mLogin.Password().sendKeys(password);
+    public void enterUsernameAndPassword(String username, String password) throws InterruptedException {
 
-        System.out.println(username+" "+password);
-
+        mLogin.Email().sendKeys(username);
+        mLogin.Password().sendKeys(password);
     }
-
-    @And("user click on login button")
-    public void clickLogin() {
+    @And("user click on login button" )
+    public void clickLogin() throws InterruptedException {
         mLogin.Submit().click();
     }
-
     @Then("user could login successfully to home page")
-    public void loggedToHomePage() {
-        Assert.assertTrue(mLogin.getMyAccount().isDisplayed());
-    }
+    public void loggedToHomePage() throws InterruptedException {
+        String signIn;
+        try {
+            mLogin.logout().isDisplayed();
+            signIn = "pass";
+        } catch (Exception e) {
+            signIn = "fail";
+        }
+        Assert.assertEquals("pass", signIn);
 
+    }
+    @After
+    public void clouser(){
+        try {
+            driver.quit();
+        }catch (Exception e){}
+
+    }
 
 }

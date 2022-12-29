@@ -26,11 +26,14 @@ public class Login {
     @FindBy(xpath = "/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/div[2]/form/div[3]/button")
     private WebElement submit;
 
+    @FindBy(className = "ico-logout")
+    private WebElement logout;
+
     public WebElement getLogIN() {
         return LogIN;
     }
-    @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
-    private WebElement myAccount;
+
+
     public WebElement Email() {
         return email;
     }
@@ -43,7 +46,7 @@ public class Login {
         return submit;
     }
 
-    public WebElement getMyAccount() {
-        return myAccount;
+    public WebElement logout() {
+        return logout;
     }
 }
