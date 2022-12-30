@@ -1,0 +1,14 @@
+Feature: currency
+  Scenario: Logged User could switch between currencies US-Euro
+    Given user logged in succesfuly
+    When user click on currency list and select Euro
+    Then Euro appear on the currency field
+
+
+
+  Scenario: Logged User could switch between currencies US-Euro
+    Given user logged in succesfuly
+    When user click on currency field and select US Dollar
+    Then US Dollar appear on the currency field
+
+

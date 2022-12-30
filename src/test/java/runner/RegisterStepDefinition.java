@@ -11,7 +11,6 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.page_object.Login;
 import org.page_object.Register;
 
 import java.util.concurrent.TimeUnit;
@@ -48,11 +47,11 @@ public class RegisterStepDefinition {
         month.selectByValue("5");
         Select year = new Select(mRegister.selectYear());
         year.selectByValue("2000");
-        mRegister.getEmail().sendKeys("mostafa112@gmail.com");
+        mRegister.getEmail().sendKeys("m@gmail.com");
         mRegister.getCompany().sendKeys("FWD");
         mRegister.getNewsletter().click();
-        mRegister.getPassword().sendKeys("most6789");
-        mRegister.getConfirmPassword().sendKeys("most6789");
+        mRegister.getPassword().sendKeys("most1234");
+        mRegister.getConfirmPassword().sendKeys("most1234");
 
 
     }
@@ -65,9 +64,7 @@ public class RegisterStepDefinition {
 
     @Then("user registered successfully")
     public void loggedToHomePage() throws InterruptedException {
-        String status = "bv";
-        String message = "Your registration completed";
-        // System.out.println(mRegister.getMessage().getText());
+        String status = "";
         try {
             if (mRegister.getMessage().getText().equals("Your registration completed"))
                 status = "pass";
