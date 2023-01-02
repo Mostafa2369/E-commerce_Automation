@@ -12,38 +12,37 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.page_object.Category;
-import org.page_object.ShoppingCart;
+import org.page_object.CompareList;
+import org.page_object.WishList;
 
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
-public class ShoppingCartStepDefinition {
+public class CompareListStepDefinition {
     int randomNum;
     WebDriver driver;
-    ShoppingCart mShoppingCart;
+    CompareList mCompareList;
     List<WebElement> all;
     int index;
 
-    @Given("user  logged in  successfuly")
+    @Given("user  logged   in  successfuly")
     public void loginSuccessfuly() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        mShoppingCart = new ShoppingCart(driver);
-        mShoppingCart.getLogIN().click();
-        mShoppingCart.getEmail().sendKeys("most@gmail.com");
-        mShoppingCart.getPassword().sendKeys("most1234");
-        mShoppingCart.getSubmit().click();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        mCompareList = new CompareList(driver);
+        mCompareList.getLogIN().click();
+        mCompareList.getEmail().sendKeys("most@gmail.com");
+        mCompareList.getPassword().sendKeys("most1234");
+        mCompareList.getSubmit().click();
     }
 
-    @When("user select cell phones sub category")
+    @When("user  select cell phones sub  category")
     public void selectCellPhoneSubCategory() throws InterruptedException {
-        all = mShoppingCart.getCategoryList().findElements(By.tagName("li"));
+        all = mCompareList.getCategoryList().findElements(By.tagName("li"));
         // {0, 4, 8, 12, 13, 14, 15}
         Actions action = new Actions(driver);
         action.moveToElement(all.get(4)).perform();
@@ -51,38 +50,39 @@ public class ShoppingCartStepDefinition {
         all.get(6).click();
     }
 
-    @And("user add phone to cart")
-    public void AddPhoneToCart() {
-        mShoppingCart.getPhone1().click();
+    @And("user add phone to compareList")
+    public void AddPhoneToWishList() {
+        mCompareList.getPhone1().click();
     }
 
-    @And("user select  books category")
+    @And("user  select  books  category")
     public void selectBooksSubCategory() {
-        mShoppingCart.getBookCategory().click();
+        mCompareList.getBookCategory().click();
     }
 
-    @And("user add books to cart")
-    public void Add2BooksToCart() throws InterruptedException {
-        mShoppingCart.getBook1().click();
+    @And("user add books to compareList")
+    public void Add2BooksToWishList() throws InterruptedException {
+        mCompareList.getBook1().click();
     }
 
-    @And("user select  Jewelry category")
+    @And("user  select  Jewelry  category")
     public void selectJewelrySubCategory() {
-        mShoppingCart.getJewelCategory().click();
+        mCompareList.getJewelCategory().click();
     }
 
-    @And("user add Jewelry to cart")
+    @And("user  add Jewelry to compareList")
     public void Add2JewelryToCart() throws InterruptedException {
-        mShoppingCart.getJewel1().click();
+        mCompareList.getJewel1().click();
+        mCompareList.getShoppingCartButton().click();
+        Thread.sleep(1000);
     }
 
-    @Then("list  of products added to shopping cart")
-    public void listOfProductAppearInShoppingCart() throws InterruptedException {
-        mShoppingCart.getShoppingCartButton().click();
-        Thread.sleep(1000);
+    @Then("list  of products added to compareList")
+    public void listOfProductAppearInWishList() throws InterruptedException {
+
         String status = "fail";
         try {
-            WebElement parentElement = mShoppingCart.getCartList();
+            WebElement parentElement = mCompareList.getCartList();
             List<WebElement> allChildElements = parentElement.findElements(By.xpath("*"));
             int size = allChildElements.size();
             if (size > 0)

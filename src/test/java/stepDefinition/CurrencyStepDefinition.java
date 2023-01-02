@@ -1,4 +1,4 @@
-package runner;
+package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -33,7 +33,7 @@ public class CurrencyStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mCurrency = new Currency(driver);
         mCurrency.getLogIN().click();
-        mCurrency.getEmail().sendKeys("m@gmail.com");
+        mCurrency.getEmail().sendKeys("most@gmail.com");
         mCurrency.getPassword().sendKeys("most1234");
         mCurrency.getSubmit().click();
     }

@@ -5,12 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ShoppingCart {
+public class WishList {
 
 
     WebDriver driver;
 
-    public ShoppingCart(WebDriver driver) {
+    public WishList(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
@@ -25,15 +25,15 @@ public class ShoppingCart {
     private WebElement submit;
     @FindBy(xpath = "/html/body/div[6]/div[2]/ul[1]")
     private WebElement categoryList;
-    @FindBy(xpath = "//*[@id=\"shopping-cart-form\"]/div[1]/table/tbody")
+    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div/div/div[2]/div[1]/form/div[1]/table/tbody")
     private WebElement cartList;
-    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[3]/div[2]/button[1]")
+    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[3]/div[2]/button[3]")
     private WebElement book1;
 
-    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div/div[2]/div[3]/div[2]/button[1]")
+    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div/div[2]/div[3]/div[2]/button[3]")
     private WebElement jewel1;
 
-    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[3]/div[2]/button[1]")
+    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[3]/div/div[2]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[3]/div[2]/button[3]")
     private WebElement phone1;
 
     @FindBy(xpath = "/html/body/div[6]/div[2]/ul[1]/li[5]/a")
@@ -42,8 +42,8 @@ public class ShoppingCart {
     @FindBy(xpath = "/html/body/div[6]/div[2]/ul[1]/li[6]/a")
     private WebElement jewelCategory;
 
-    @FindBy(xpath = "//*[@id=\"topcartlink\"]/a/span[1]")
-    private WebElement shoppingCartButton;
+    @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[3]/a/span[1]")
+    private WebElement wishListButton;
 
     public WebElement getLogIN() {
         return LogIN;
@@ -92,6 +92,6 @@ public class ShoppingCart {
     }
 
     public WebElement getShoppingCartButton() {
-        return shoppingCartButton;
+        return wishListButton;
     }
 }

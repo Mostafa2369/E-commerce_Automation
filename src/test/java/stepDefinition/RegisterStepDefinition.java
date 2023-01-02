@@ -1,4 +1,4 @@
-package runner;
+package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -47,7 +47,7 @@ public class RegisterStepDefinition {
         month.selectByValue("5");
         Select year = new Select(mRegister.selectYear());
         year.selectByValue("2000");
-        mRegister.getEmail().sendKeys("m@gmail.com");
+        mRegister.getEmail().sendKeys("most@gmail.com");
         mRegister.getCompany().sendKeys("FWD");
         mRegister.getNewsletter().click();
         mRegister.getPassword().sendKeys("most1234");

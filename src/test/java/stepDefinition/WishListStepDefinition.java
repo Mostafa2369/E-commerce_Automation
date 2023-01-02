@@ -12,38 +12,37 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.page_object.Category;
 import org.page_object.ShoppingCart;
+import org.page_object.WishList;
 
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
-public class ShoppingCartStepDefinition {
+public class WishListStepDefinition {
     int randomNum;
     WebDriver driver;
-    ShoppingCart mShoppingCart;
+    WishList mWishList;
     List<WebElement> all;
     int index;
 
-    @Given("user  logged in  successfuly")
+    @Given("user  logged  in  successfuly")
     public void loginSuccessfuly() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        mShoppingCart = new ShoppingCart(driver);
-        mShoppingCart.getLogIN().click();
-        mShoppingCart.getEmail().sendKeys("most@gmail.com");
-        mShoppingCart.getPassword().sendKeys("most1234");
-        mShoppingCart.getSubmit().click();
+        mWishList = new WishList(driver);
+        mWishList.getLogIN().click();
+        mWishList.getEmail().sendKeys("most@gmail.com");
+        mWishList.getPassword().sendKeys("most1234");
+        mWishList.getSubmit().click();
     }
 
-    @When("user select cell phones sub category")
+    @When("user select cell phones sub  category")
     public void selectCellPhoneSubCategory() throws InterruptedException {
-        all = mShoppingCart.getCategoryList().findElements(By.tagName("li"));
+        all = mWishList.getCategoryList().findElements(By.tagName("li"));
         // {0, 4, 8, 12, 13, 14, 15}
         Actions action = new Actions(driver);
         action.moveToElement(all.get(4)).perform();
@@ -51,38 +50,38 @@ public class ShoppingCartStepDefinition {
         all.get(6).click();
     }
 
-    @And("user add phone to cart")
+    @And("user add phone to wishlist")
     public void AddPhoneToCart() {
-        mShoppingCart.getPhone1().click();
+        mWishList.getPhone1().click();
     }
 
-    @And("user select  books category")
+    @And("user select  books  category")
     public void selectBooksSubCategory() {
-        mShoppingCart.getBookCategory().click();
+        mWishList.getBookCategory().click();
     }
 
-    @And("user add books to cart")
+    @And("user add books to wishlist")
     public void Add2BooksToCart() throws InterruptedException {
-        mShoppingCart.getBook1().click();
+        mWishList.getBook1().click();
     }
 
-    @And("user select  Jewelry category")
+    @And("user  select  Jewelry category")
     public void selectJewelrySubCategory() {
-        mShoppingCart.getJewelCategory().click();
+        mWishList.getJewelCategory().click();
     }
 
-    @And("user add Jewelry to cart")
+    @And("user  add Jewelry to wishlist")
     public void Add2JewelryToCart() throws InterruptedException {
-        mShoppingCart.getJewel1().click();
+        mWishList.getJewel1().click();
     }
 
-    @Then("list  of products added to shopping cart")
+    @Then("list  of products added to wishlist")
     public void listOfProductAppearInShoppingCart() throws InterruptedException {
-        mShoppingCart.getShoppingCartButton().click();
+        mWishList.getShoppingCartButton().click();
         Thread.sleep(1000);
         String status = "fail";
         try {
-            WebElement parentElement = mShoppingCart.getCartList();
+            WebElement parentElement = mWishList.getCartList();
             List<WebElement> allChildElements = parentElement.findElements(By.xpath("*"));
             int size = allChildElements.size();
             if (size > 0)

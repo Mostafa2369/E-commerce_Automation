@@ -1,4 +1,4 @@
-Feature: login
+Feature: reset password
   Scenario: User could log in with valid email and password
     Given user navigate to login  page
     When user click Forgot password?

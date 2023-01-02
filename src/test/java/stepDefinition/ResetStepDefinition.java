@@ -1,4 +1,4 @@
-package runner;
+package stepDefinition;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -41,7 +41,7 @@ public class ResetStepDefinition {
     @Then("user write his email")
     public void writeEmail() {
 
-        mResetPassword.getEmail().sendKeys("m@gmail.com");
+        mResetPassword.getEmail().sendKeys("most@gmail.com");
     }
 
 
