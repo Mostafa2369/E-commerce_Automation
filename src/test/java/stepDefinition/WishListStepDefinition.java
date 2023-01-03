@@ -35,7 +35,7 @@ public class WishListStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mWishList = new WishList(driver);
         mWishList.getLogIN().click();
-        mWishList.getEmail().sendKeys("most@gmail.com");
+        mWishList.getEmail().sendKeys("most1@gmail.com");
         mWishList.getPassword().sendKeys("most1234");
         mWishList.getSubmit().click();
     }

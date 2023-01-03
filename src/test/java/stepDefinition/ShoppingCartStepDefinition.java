@@ -36,7 +36,7 @@ public class ShoppingCartStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mShoppingCart = new ShoppingCart(driver);
         mShoppingCart.getLogIN().click();
-        mShoppingCart.getEmail().sendKeys("most@gmail.com");
+        mShoppingCart.getEmail().sendKeys("most1@gmail.com");
         mShoppingCart.getPassword().sendKeys("most1234");
         mShoppingCart.getSubmit().click();
     }

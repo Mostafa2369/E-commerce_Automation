@@ -36,7 +36,7 @@ public class CreateOrderStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mCreateOrder = new CreateOrder(driver);
         mCreateOrder.getLogIN().click();
-        mCreateOrder.getEmail().sendKeys("most@gmail.com");
+        mCreateOrder.getEmail().sendKeys("most1@gmail.com");
         mCreateOrder.getPassword().sendKeys("most1234");
         mCreateOrder.getSubmit().click();
     }

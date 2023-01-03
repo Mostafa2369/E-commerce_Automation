@@ -36,7 +36,7 @@ public class CategoryStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mCategory = new Category(driver);
         mCategory.getLogIN().click();
-        mCategory.getEmail().sendKeys("most@gmail.com");
+        mCategory.getEmail().sendKeys("most1@gmail.com");
         mCategory.getPassword().sendKeys("most1234");
         mCategory.getSubmit().click();
     }

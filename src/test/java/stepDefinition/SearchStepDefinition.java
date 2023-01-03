@@ -32,7 +32,7 @@ public class SearchStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mSearch = new Search(driver);
         mSearch.getLogIN().click();
-        mSearch.getEmail().sendKeys("most@gmail.com");
+        mSearch.getEmail().sendKeys("most1@gmail.com");
         mSearch.getPassword().sendKeys("most1234");
       mSearch.getSubmit().click();
     }

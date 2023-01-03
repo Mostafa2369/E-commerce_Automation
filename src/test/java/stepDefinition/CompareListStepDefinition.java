@@ -35,7 +35,7 @@ public class CompareListStepDefinition {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         mCompareList = new CompareList(driver);
         mCompareList.getLogIN().click();
-        mCompareList.getEmail().sendKeys("most@gmail.com");
+        mCompareList.getEmail().sendKeys("most1@gmail.com");
         mCompareList.getPassword().sendKeys("most1234");
         mCompareList.getSubmit().click();
     }

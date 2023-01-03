@@ -34,7 +34,7 @@ public class TagStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mTag = new Tag(driver);
         mTag.getLogIN().click();
-        mTag.getEmail().sendKeys("most@gmail.com");
+        mTag.getEmail().sendKeys("most1@gmail.com");
         mTag.getPassword().sendKeys("most1234");
         mTag.getSubmit().click();
     }
