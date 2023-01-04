@@ -36,7 +36,7 @@ public class FilterStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mFilter = new Filter(driver);
         mFilter.getLogIN().click();
-        mFilter.getEmail().sendKeys("most1@gmail.com");
+        mFilter.getEmail().sendKeys("most123@gmail.com");
         mFilter.getPassword().sendKeys("most1234");
         mFilter.getSubmit().click();
     }

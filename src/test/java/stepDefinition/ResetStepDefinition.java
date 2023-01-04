@@ -41,7 +41,7 @@ public class ResetStepDefinition {
     @Then("user write his email")
     public void writeEmail() {
 
-        mResetPassword.getEmail().sendKeys("most1@gmail.com");
+        mResetPassword.getEmail().sendKeys("most123@gmail.com");
     }
 
 

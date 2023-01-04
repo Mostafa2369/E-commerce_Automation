@@ -1,3 +1,4 @@
+@UItest
 Feature: tag
   Scenario: Logged user could select different tags
     Given user  logged in successfuly

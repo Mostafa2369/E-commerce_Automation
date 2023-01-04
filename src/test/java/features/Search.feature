@@ -1,3 +1,4 @@
+@UItest
 Feature: seacrh
   Scenario: Logged User could search for any product
     Given user logged in successfuly

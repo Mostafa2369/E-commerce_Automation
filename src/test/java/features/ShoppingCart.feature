@@ -1,3 +1,4 @@
+@UItest
 Feature: ShoppingCart
 
   Scenario: Logged user could add different products to Shopping cart

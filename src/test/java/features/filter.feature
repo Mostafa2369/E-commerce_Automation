@@ -1,3 +1,4 @@
+@UItest
 Feature: filter
   Scenario: Logged user could filter with color
     Given user logged  in successfuly

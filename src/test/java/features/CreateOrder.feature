@@ -1,3 +1,4 @@
+@UItest
 Feature: Create Order
 
   Scenario: Create successful Order

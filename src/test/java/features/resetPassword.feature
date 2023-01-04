@@ -1,3 +1,4 @@
+@UItest
 Feature: reset password
   Scenario: User could log in with valid email and password
     Given user navigate to login  page

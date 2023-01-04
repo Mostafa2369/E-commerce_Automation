@@ -1,3 +1,4 @@
+@UItest
 Feature: Change currency
   Scenario: Logged User could switch between currencies US to Euro
     Given user logged in succesfuly

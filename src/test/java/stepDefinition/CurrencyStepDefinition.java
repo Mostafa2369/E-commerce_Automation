@@ -33,7 +33,7 @@ public class CurrencyStepDefinition {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         mCurrency = new Currency(driver);
         mCurrency.getLogIN().click();
-        mCurrency.getEmail().sendKeys("most1@gmail.com");
+        mCurrency.getEmail().sendKeys("most123@gmail.com");
         mCurrency.getPassword().sendKeys("most1234");
         mCurrency.getSubmit().click();
     }

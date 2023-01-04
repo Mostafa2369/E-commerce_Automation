@@ -1,3 +1,4 @@
+@UItest
 Feature: compareList
 
   Scenario: Logged user could add different products to compare list

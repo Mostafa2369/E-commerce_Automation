@@ -1,3 +1,4 @@
+@UItest
 Feature: register
   Scenario: User could register with valid data
     Given user navigate to register page

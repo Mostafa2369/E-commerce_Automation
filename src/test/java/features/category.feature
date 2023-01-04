@@ -1,3 +1,4 @@
+@UItest
 Feature: category
   Scenario: Logged user could select different Categories
     Given user logged in  successfuly
